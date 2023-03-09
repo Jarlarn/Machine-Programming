@@ -1,5 +1,5 @@
 /*
- * 	startup.c
+ * 	Easy Pong program for Assembly programming done in C.
  *
  */
  #include <string.h>
