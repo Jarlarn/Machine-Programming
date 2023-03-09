@@ -467,7 +467,7 @@ void ascii_gotoxy(int x, int y)
 	ascii_write_cmd(0x80 | adress);
 }
 
-int print_score(int score1, int score2) {
+void print_score(int score1, int score2) {
 
     char *s;
     char score_1 = 48 + score1; 
@@ -511,124 +511,7 @@ int print_score(int score1, int score2) {
     s = test2;
     while (*s)
         ascii_write_char(*s++);
-    return 0;
 }
-
-
-void print_score0_0(void) {
-    char *s;
-    char test1[] = "Player 1 score: 0";
-    char test2[] = "Player 2 score: 0";
-    ascii_init();
-    ascii_gotoxy(1,1);
-    s = test1;
-    while (*s)
-        ascii_write_char (*s++);
-    ascii_gotoxy(1,2);
-    s = test2;
-    while (*s)
-        ascii_write_char(*s++);
-}
-void print_score1_0(void) {
-    char *s;
-    char test1[] = "Player 1 score: 1";
-    char test2[] = "Player 2 score: 0";
-    ascii_init();
-    ascii_gotoxy(1,1);
-    s = test1;
-    while (*s)
-        ascii_write_char (*s++);
-    ascii_gotoxy(1,2);
-    s = test2;
-    while (*s)
-        ascii_write_char(*s++);
-}
-void print_score2_0(void) {
-    char *s;
-    char test1[] = "Player 1 score: 2";
-    char test2[] = "Player 2 score: 0";
-    ascii_init();
-    ascii_gotoxy(1,1);
-    s = test1;
-    while (*s)
-        ascii_write_char (*s++);
-    ascii_gotoxy(1,2);
-    s = test2;
-    while (*s)
-        ascii_write_char(*s++);
-}
-void print_score0_1(void) {
-    char *s;
-    char test1[] = "Player 1 score: 0";
-    char test2[] = "Player 2 score: 1";
-    ascii_init();
-    ascii_gotoxy(1,1);
-    s = test1;
-    while (*s)
-        ascii_write_char (*s++);
-    ascii_gotoxy(1,2);
-    s = test2;
-    while (*s)
-        ascii_write_char(*s++);
-}
-void print_score0_2(void) {
-    char *s;
-    char test1[] = "Player 1 score: 0";
-    char test2[] = "Player 2 score: 2";
-    ascii_init();
-    ascii_gotoxy(1,1);
-    s = test1;
-    while (*s)
-        ascii_write_char (*s++);
-    ascii_gotoxy(1,2);
-    s = test2;
-    while (*s)
-        ascii_write_char(*s++);
-}
-void print_score1_1(void) {
-    char *s;
-    char test1[] = "Player 1 score: 1";
-    char test2[] = "Player 2 score: 1";
-    ascii_init();
-    ascii_gotoxy(1,1);
-    s = test1;
-    while (*s)
-        ascii_write_char (*s++);
-    ascii_gotoxy(1,2);
-    s = test2;
-    while (*s)
-        ascii_write_char(*s++);
-}
-void print_score2_1(void) {
-    char *s;
-    char test1[] = "Player 1 score: 2";
-    char test2[] = "Player 2 score: 1";
-    ascii_init();
-    ascii_gotoxy(1,1);
-    s = test1;
-    while (*s)
-        ascii_write_char (*s++);
-    ascii_gotoxy(1,2);
-    s = test2;
-    while (*s)
-        ascii_write_char(*s++);
-}
-void print_score1_2(void) {
-    char *s;
-    char test1[] = "Player 1 score: 1";
-    char test2[] = "Player 2 score: 2";
-    ascii_init();
-    ascii_gotoxy(1,1);
-    s = test1;
-    while (*s)
-        ascii_write_char (*s++);
-    ascii_gotoxy(1,2);
-    s = test2;
-    while (*s)
-        ascii_write_char(*s++);
-}
-
-
 
 int print_end1(void) {
     ascii_command(0x1);
@@ -712,38 +595,7 @@ void main(void)
             reset(o,p,p1);
             
         }
-        
-        
-        /*
-        if (score1 ==1 && score2 ==0 && count ==0) {
-            print_score1_0();
-            count++;
-        } 
-        if (score1 ==2 && score2 ==0 && count ==1) {
-            print_score2_0();
-            count++;
-        } 
-        if (score1 ==2 && score2 ==1 && count == 2) {
-            print_score2_1();
-            count++;
-        } 
-        if (score1 ==0 && score2 ==1 &&count ==0) {
-            print_score0_1();
-            count++;
-        } 
-        if (score1 ==0 && score2 ==2 && count ==1) {
-            print_score0_2();
-            count++;
-        } 
-        if (score1 ==1 && score2 ==1 && count ==1) {
-            print_score1_1();
-            count++;
-        } 
-        if (score1 ==1 && score2 ==2 && count ==2) {
-            print_score1_2();
-            count++;
-        } 
-        */
+
          if (score1 > 5) {
         print_end1();
         break;
